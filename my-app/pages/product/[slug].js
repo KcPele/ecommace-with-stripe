@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Product } from "../../components";
-import { client, urlFor } from "../../components/lib/client";
+import { client, urlFor } from "../../lib/client";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
