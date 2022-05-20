@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
 const Context = createContext();
@@ -13,8 +13,11 @@ export const StateContext = ({ children }) => {
   let foundProduct;
   let index;
 
+
+
   const onAdd = (product, quantity) => {
     //checking if an item is already in cart
+    console.log(cartItems)
     const checkProductInCart = cartItems.find(
       (item) => item._id == product._id
     );
@@ -90,6 +93,9 @@ export const StateContext = ({ children }) => {
         decrementQty,
         onAdd,
         onRemove,
+        setCartItems, 
+        setTotalPrice,
+        setTotalQuantities
       }}
     >
       {children}

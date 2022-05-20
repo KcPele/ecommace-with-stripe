@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useEffect } from "react";
 import { Product, FooterBanner, HeroBanner } from "../components";
 import { client } from "../lib/client";
+
 const Home = ({ products, bannerData }) => {
+  
+
   return (
     <>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
