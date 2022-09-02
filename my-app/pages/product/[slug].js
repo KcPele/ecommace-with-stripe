@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Product } from "../../components";
 import { client, urlFor } from "../../lib/client";
 import {
@@ -7,12 +7,12 @@ import {
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-import { useStateContext } from "../../context/StateContext";
+import { Context } from "../../context/StateContext";
 const ProductDetails = ({ product, products }) => {
   const { image, name, details, price } = product;
 
   const [index, setIndex] = useState(0);
-  const { decrementQty, incrementQty, qty, onAdd, setShowCart } = useStateContext();
+  const { decrementQty, incrementQty, qty, onAdd, setShowCart } = useContext(Context);
 
   const handleBuyNow =() => {
     onAdd(product, qty)
@@ -26,6 +26,7 @@ const ProductDetails = ({ product, products }) => {
             <img
               className="product-detail-image"
               src={urlFor(image && image[index])}
+              alt="product details"
             />
           </div>
           <div className="small-images-container">
@@ -33,6 +34,7 @@ const ProductDetails = ({ product, products }) => {
               <img
                 key={i}
                 src={urlFor(item)}
+                alt="small image"
                 className={
                   i === index ? "small-image selected-image" : "small-image"
                 }

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import Link from "next/link";
 import {
   AiOutlineMinus,
@@ -6,15 +6,15 @@ import {
   AiOutlineLeft,
   AiOutlineShopping,
 } from "react-icons/ai";
-import { TiDeleteOuline, TiDeleteOutline } from "react-icons/ti";
+import { TiDeleteOutline } from "react-icons/ti";
 import toast from "react-hot-toast";
-import { useStateContext } from "../context/StateContext";
+
 import { urlFor } from "../lib/client";
 import getStript from "../lib/getStripe";
+import { Context } from "../context/StateContext";
 const Cart = () => {
   const cartRef = useRef();
-  const { totalPrice, totalQuantities, cartItems, setShowCart , toggleCartItemQuantity, onRemove} =
-    useStateContext();
+  const { totalPrice, totalQuantities, cartItems, setShowCart , toggleCartItemQuantity, onRemove} = useContext(Context);
   
     //for handling stripe payments
     const handleCheckout = async () => {
@@ -66,6 +66,7 @@ const Cart = () => {
                 <img
                   src={urlFor(item?.image[0])}
                   className="cart-product-image"
+                  alt="cart product"
                 />
                 <div className="item-desc">
                   <div className="flex top">
