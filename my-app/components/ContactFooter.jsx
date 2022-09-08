@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { images } from '../constants';
+import { emailImage, mobileImage } from '../constants';
 import { client } from '../lib/client';
 
 import { motion } from 'framer-motion';
@@ -82,11 +82,11 @@ const ContactFooter = () => {
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
+          <img src={emailImage } alt="email" />
           <a href="mailto:fidekg123@.com" className="p-text">fidekg123@gmail.com</a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
+          <img src={mobileImage} alt="phone" />
           <a href="tel:+234 7019 7365 90" className="p-text">+234 7019 7366 90</a>
         </div>
       </div>

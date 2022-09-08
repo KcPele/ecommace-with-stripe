@@ -1,8 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { urlFor } from "../lib/client";
+import { motion } from "framer-motion";
 const HeroBanner = ({ heroBanner }) => {
   return (
+    <motion.div
+      whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+      transition={{ duration: 0.5 }}
+      
+    >
+
     <div className="hero-banner-container">
       <div>
         <div className="app__hero-banner">
@@ -26,6 +33,7 @@ const HeroBanner = ({ heroBanner }) => {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 };
 

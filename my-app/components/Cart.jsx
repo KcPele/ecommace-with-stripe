@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import { urlFor } from "../lib/client";
 import getStript from "../lib/getStripe";
 import { Context } from "../context/StateContext";
+import { motion } from "framer-motion";
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart , toggleCartItemQuantity, onRemove} = useContext(Context);
@@ -32,8 +33,11 @@ const Cart = () => {
       stripe.redirectToCheckout({ sessionId: data.id })
     }
   return (
+  
     <div className="cart-wrapper" ref={cartRef}>
-      <div className="cart-container">
+      <motion.div
+            whileInView={{ x: [300, 0] }}
+            transition={{ duration: 0.85, ease: 'easeOut' }} className="cart-container">
         <button
           type="button"
           className="cart-heading"
@@ -59,7 +63,8 @@ const Cart = () => {
           </div>
         )}
 
-        <div className="product-container">
+    <div
+           className="product-container">
           {cartItems.length >= 1 &&
             cartItems.map((item) => (
               <div className="product" key={item._id}>
@@ -113,8 +118,9 @@ const Cart = () => {
           </div>
           
         )}
-      </div>
+      </motion.div>
     </div>
+  
   );
 };
 

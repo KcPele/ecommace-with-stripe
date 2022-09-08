@@ -1,9 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { urlFor } from "../lib/client";
+import { motion } from "framer-motion";
 const FooterBanner = ({ footerBanner: { discount, largeText1, 
   largeText2, saleTime, smallText, midText, desc, product, buttonText, image } }) => {
   return (
+    <motion.div
+    whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+    transition={{ duration: 0.5 }}
+    
+  >
     <div className="footer-banner-container">
       <div className="banner-desc">
         <div>
@@ -26,6 +32,7 @@ const FooterBanner = ({ footerBanner: { discount, largeText1,
         <img src={urlFor(image)} alt="footer banner" className='footer-banner-image'/>
       </div>
     </div>
+    </motion.div>
   );
 };
 

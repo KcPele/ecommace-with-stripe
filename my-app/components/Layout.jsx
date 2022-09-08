@@ -1,12 +1,12 @@
 import React from "react";
 import Head from "next/head";
 import Footer from "./Footer.jsx";
-import { Navbar } from ".";
+import { ContactFooter, Navbar } from ".";
 const Layout = ({children}) => {
   return (
     <div className="layout">
     <Head>
-      <title>App Store</title>
+      <title>Car Store</title>
     </Head>
     <header>
       <Navbar />
@@ -14,6 +14,7 @@ const Layout = ({children}) => {
     <main className="main-container">
       {children}
     </main>
+    <ContactFooter />
     <footer>
       <Footer />
     </footer>

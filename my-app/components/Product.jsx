@@ -1,8 +1,14 @@
 import React from 'react'
 import Link from "next/link"
 import { urlFor } from '../lib/client'
+import { motion } from 'framer-motion'
 const Product = ({product: {image, name, slug, price}}) => {
   return (
+    <motion.div
+    whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+    transition={{ duration: 0.5 }}
+    
+  >
     <div>
      <Link href={`/product/${slug.current}`} >
        <div className='product-card'>
@@ -18,6 +24,7 @@ const Product = ({product: {image, name, slug, price}}) => {
        </div>
      </Link>
     </div>
+    </motion.div>
   )
 }
 

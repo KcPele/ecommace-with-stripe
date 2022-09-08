@@ -464,7 +464,7 @@ padding: 30px 65px;
 .product-detail-image{
   border-radius: 15px;
    background-color: #ebebeb;
-
+  object-fit: contain;
   width: 400px;
   height: 400px;
   cursor: pointer;
@@ -480,6 +480,7 @@ padding: 30px 65px;
   margin-top: 20px;
 }
 .small-image{
+  object-fit: contain;
   border-radius: 8px;
   background-color: #ebebeb;
   width: 70px;
@@ -714,6 +715,7 @@ margin-top: 160px;
   .product-detail-container .product-detail-image{
     width: 350px;
     height: 350px;
+    object-fit: contain;
   }
   .cart-container{
     width: 415px;
