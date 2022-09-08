@@ -3,6 +3,7 @@ import Link from "next/link";
 import { urlFor } from "../lib/client";
 import { motion } from "framer-motion";
 const HeroBanner = ({ heroBanner }) => {
+
   return (
     <motion.div
       whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
@@ -10,7 +11,7 @@ const HeroBanner = ({ heroBanner }) => {
       
     >
 
-    <div className="hero-banner-container">
+    <div id="hero" className="hero-banner-container">
       <div>
         <div className="app__hero-banner">
         <div>
@@ -23,9 +24,7 @@ const HeroBanner = ({ heroBanner }) => {
 
         </div>
         <div>
-            <Link href={`/product/${heroBanner.product}`}>
-                <button type="button">{heroBanner.buttonText}</button>
-            </Link>
+           
             <div className="desc">
                 <h5>Description</h5>
               <p>{heroBanner.desc}</p>

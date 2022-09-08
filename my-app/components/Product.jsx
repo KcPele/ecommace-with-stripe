@@ -9,7 +9,7 @@ const Product = ({product: {image, name, slug, price}}) => {
     transition={{ duration: 0.5 }}
     
   >
-    <div>
+    <div id="product">
      <Link href={`/product/${slug.current}`} >
        <div className='product-card'>
          <img 
@@ -20,7 +20,7 @@ const Product = ({product: {image, name, slug, price}}) => {
          className="product-image"
          />
          <p className='product-name'>{name}</p>
-         <p className='product-price'>${price}</p>
+         <p className='product-price'>₦{price}</p>
        </div>
      </Link>
     </div>

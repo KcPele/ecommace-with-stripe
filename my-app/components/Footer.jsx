@@ -11,8 +11,8 @@ const Footer = () => {
     <div className='footer-container'>
       <p>2022 JEMI Cars All right reserverd</p>
       <p className='icons'>
-        <AiFillInstagram />
-        <AiOutlineTwitter />
+       <a href='#'> <AiFillInstagram /></a>
+       <a href='#'><AiOutlineTwitter /></a>
       </p>
     </div>
     </motion.div>

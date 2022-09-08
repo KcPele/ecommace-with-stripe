@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { emailImage, mobileImage } from '../constants';
-import { client } from '../lib/client';
+import emailImage from '../assets/email.png';
+import  mobileImage from '../assets/mobile.png';
 
 import { motion } from 'framer-motion';
 
@@ -59,15 +59,7 @@ const ContactFooter = () => {
     }
 
 
-    // client.create(contact)
-    //   .then(() => {
-    //     setLoading(false);
-    //     setIsFormSubmitted(true);
-    //     setUsername('')
-    //     setEmail('')
-    //     setMessage('')
-    //   })
-    //   .catch((err) => console.log(err));
+   
   };
 
   return (
@@ -82,12 +74,12 @@ const ContactFooter = () => {
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={emailImage } alt="email" />
-          <a href="mailto:fidekg123@.com" className="p-text">fidekg123@gmail.com</a>
+          {/* <img src={`${emailImage}`} alt="email" /> */}
+          <a href="mailto:giftint8@gmail.com" className="p-text">giftint8@gmail.com</a>
         </div>
         <div className="app__footer-card">
-          <img src={mobileImage} alt="phone" />
-          <a href="tel:+234 7019 7365 90" className="p-text">+234 7019 7366 90</a>
+          {/* <img src={mobileImage} alt="phone" /> */}
+          <a href="tel:+234 8035 5348 53" className="p-text">+234 8035 5348 53</a>
         </div>
       </div>
       {!isFormSubmitted ? (
