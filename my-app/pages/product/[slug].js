@@ -21,7 +21,7 @@ const ProductDetails = ({ product, products }) => {
   return ( 
     <div>
       <div className="product-detail-container">
-        <div>
+        <div style={{'flex': '1'}}>
           <div className="image-container">
             <img
               className="product-detail-image"

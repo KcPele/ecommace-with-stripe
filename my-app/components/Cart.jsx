@@ -12,7 +12,7 @@ import toast from "react-hot-toast";
 import { urlFor } from "../lib/client";
 import getStript from "../lib/getStripe";
 import { Context } from "../context/StateContext";
-import { motion } from "framer-motion";
+
 const Cart = () => {
   const cartRef = useRef();
   const { totalPrice, totalQuantities, cartItems, setShowCart , toggleCartItemQuantity, onRemove} = useContext(Context);
@@ -34,10 +34,9 @@ const Cart = () => {
     }
   return (
   
-    <div className="cart-wrapper" ref={cartRef}>
-      <motion.div
-            whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.85, ease: 'easeOut' }} className="cart-container">
+    <div
+    className="scale-up-tr cart-wrapper" ref={cartRef}>
+   <div className="cart-container">
         <button
           type="button"
           className="cart-heading"
@@ -118,8 +117,8 @@ const Cart = () => {
           </div>
           
         )}
-      </motion.div>
     </div>
+      </div>
   
   );
 };
